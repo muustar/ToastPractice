@@ -21,15 +21,12 @@ public class MainActivity extends AppCompatActivity {
         //toast custom
 
         LayoutInflater inflater = getLayoutInflater();
-        View layout = inflater.inflate(R.layout.custom_toast, (ViewGroup) findViewById(R.id.custom_toast_container));
+        final View layout = inflater.inflate(R.layout.custom_toast, (ViewGroup) findViewById(R.id.custom_toast_container));
 
         TextView text = (TextView)layout.findViewById(R.id.text);
-        text.setText("Egyedi Toast");
+        text.setText("Kész");
 
-        final Toast toast = new Toast(getApplicationContext());
-        toast.setGravity(Gravity.CENTER_VERTICAL,0,0);
-        toast.setDuration(Toast.LENGTH_LONG);
-        toast.setView(layout);
+
 
 
 
@@ -40,6 +37,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Toast.makeText(MainActivity.this, "sima toast", Toast.LENGTH_LONG).show();
+                final Toast toast = new Toast(getApplicationContext());
+                toast.setGravity(Gravity.CENTER_VERTICAL,0,0);
+                toast.setDuration(Toast.LENGTH_LONG);
+                toast.setView(layout);
                 toast.show();
             }
         });
